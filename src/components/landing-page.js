@@ -12,13 +12,19 @@ export function LandingPage(props) {
     }
 
     return (
-        <div className="home">
-            <div className="welcome">
+        <div className="home row">
+            <div className="col-12 information">
                 <h2>Welcome to Emoji Tutor!!</h2>
+            </div>
+            <div className="col-12 information">
                 <p>Learn Emojis! with the help of this app, learn to communicate without words, because who has <span role="img" aria-label="clock">🕒</span> for words anyway</p>
             </div>
-            <LoginForm />
-            <p>No account yet? <Link to="/register">Register</Link></p>
+            <div className="col-12 loginregister">
+                <LoginForm />
+            </div>
+            <div className="col-12 information">
+                <p>No account yet? <Link to="/register">Register</Link></p>
+            </div>
         </div>
     );
 }

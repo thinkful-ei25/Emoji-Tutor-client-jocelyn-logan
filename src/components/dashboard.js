@@ -12,7 +12,7 @@ export class Dashboard extends React.Component {
         const username = this.props.user ? this.props.user.username : '';
         return (
             <div className="dashboard">
-                <div className="welcome-message">
+                <div className="col-12">
                     <p>{`HELLO! Welcome ${username}`}</p>
                 </div>
 

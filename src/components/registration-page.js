@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-
+import './registration-page.css';
 import RegistrationForm from './registration-form';
 
 export function RegistrationPage(props) {
@@ -11,10 +11,12 @@ export function RegistrationPage(props) {
         return <Redirect to="/dashboard" />;
     }
     return (
-        <div className="home">
-            <h2>Register for Emoji Tutor</h2>
-            <RegistrationForm />
-            <p>Already registered? <Link to="/">Login</Link></p>
+        <div className="home row">
+            <div>
+                <h2>Register for Emoji Tutor</h2>
+                <RegistrationForm />
+                <p>Already registered? <Link to="/">Login</Link></p>
+            </div>
         </div>
     );
 }

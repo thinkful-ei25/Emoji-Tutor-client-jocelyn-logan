@@ -1,0 +1,10 @@
+.information{
+  display:flex;
+  justify-content: center;
+}
+
+.loginregister{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
