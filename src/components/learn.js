@@ -20,7 +20,7 @@ class Game extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    const userAnswer = this.userAnswer.value.trim();
+    const userAnswer = this.userAnswer.value.trim().toLowerCase();
     this.setState({
       userAnswer
     });
@@ -35,7 +35,7 @@ class Game extends React.Component {
       });
     } else {
       let correct;
-      message = `Incorrect! your answer: "${userAnswer}" Correct answer is: ${this.props.answer}`;
+      message = `Incorrect! your answer: "${userAnswer}" Correct answer is: "${this.props.answer}"`;
       this.setState({
         message,
         score: correct - 1

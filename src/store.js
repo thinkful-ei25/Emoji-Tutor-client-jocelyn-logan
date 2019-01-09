@@ -6,6 +6,7 @@ import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import questionReducer from './reducers/questions';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = createStore(
     combineReducers({
@@ -14,7 +15,9 @@ const store = createStore(
         protectedData: protectedDataReducer,
         question: questionReducer
     }),
-    applyMiddleware(thunk)
+    composeWithDevTools(
+        applyMiddleware(thunk)
+    )
 );
 
 // Hydrate the authToken from localStorage if it exist
