@@ -19,9 +19,9 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <div className="header-bar row">
+            <div className="header-bar">
                 <h1>Emoji Tutor</h1>
-                {logOutButton}
+                <div className="logout-button">{logOutButton}</div>
             </div>
         );
     }

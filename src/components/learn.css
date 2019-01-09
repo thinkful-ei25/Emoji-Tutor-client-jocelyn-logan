@@ -1,8 +1,4 @@
-h1{
-  text-align:center;
-  color: #F9ED9D;
-}
-.logout-button{
+.learn {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

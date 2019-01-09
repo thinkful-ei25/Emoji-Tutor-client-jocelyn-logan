@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchQuestion } from '../actions/questions';
 import Question from './question';
 import { Link } from 'react-router-dom';
-
+import './learn.css';
 class Game extends React.Component {
   constructor(props) {
     super(props);
