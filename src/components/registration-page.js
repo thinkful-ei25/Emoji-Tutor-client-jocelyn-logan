@@ -5,16 +5,16 @@ import './registration-page.css';
 import RegistrationForm from './registration-form';
 
 export function RegistrationPage(props) {
-    // If we are logged in (which happens automatically when registration
-    // is successful) redirect to the user's dashboard
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
     }
     return (
         <div className="home row">
-            <div>
+            <div className="col-12">
                 <h2>Register for Emoji Tutor</h2>
-                <RegistrationForm />
+                <div className="col-12 loginregister">
+                    <RegistrationForm />
+                </div>
                 <p>Already registered? <Link to="/">Login</Link></p>
             </div>
         </div>

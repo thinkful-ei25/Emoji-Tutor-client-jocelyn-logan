@@ -22,7 +22,7 @@ export function LandingPage(props) {
             <div className="col-12 loginregister">
                 <LoginForm />
             </div>
-            <div className="col-12 information">
+            <div className="col-12 loginregister">
                 <p>No account yet? <Link to="/register">Register</Link></p>
             </div>
         </div>

@@ -21,7 +21,7 @@ export const fetchQuestionError = (error) => ({
 export const fetchQuestion = () => (dispatch, getState) => {
   dispatch(fetchQuestionRequest());
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/questions`, {
+  return fetch(`${API_BASE_URL}/questions/next`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`
@@ -34,6 +34,7 @@ export const fetchQuestion = () => (dispatch, getState) => {
       }
       return res.json();
     }).then(question => {
+      console.log(question);
       dispatch(fetchQuestionSuccess(question));
     }).catch(err => {
       dispatch(fetchQuestionError(err));

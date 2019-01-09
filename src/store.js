@@ -3,16 +3,14 @@ import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 import { loadAuthToken } from './local-storage';
 import authReducer from './reducers/auth';
-import protectedDataReducer from './reducers/protected-data';
 import questionReducer from './reducers/questions';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(
+export const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        protectedData: protectedDataReducer,
         question: questionReducer
     }),
     composeWithDevTools(

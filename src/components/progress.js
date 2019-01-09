@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export class Progress extends React.Component {
   render() {
     return (
-      <section>
+      <section className="col-12 user-stats">
         <h2>User Stats: </h2>
         <h3>Overall: </h3>
         <p>Total correct: </p>
@@ -22,8 +22,6 @@ export class Progress extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  numCorrect: state.numCorrect,
-  numIncorrect: state.numIncorrect,
 });
 
 export default connect(mapStateToProps)(Progress); 

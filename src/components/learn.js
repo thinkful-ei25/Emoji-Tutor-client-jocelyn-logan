@@ -32,7 +32,7 @@ class Game extends React.Component {
       }
       );
     } else {
-      this.porops.dispatch(postAnswer(false));
+      this.props.dispatch(postAnswer(false));
       let userScore = this.state.score - 1;
       this.setState({
         userAnswer,
@@ -50,18 +50,14 @@ class Game extends React.Component {
     this.props.dispatch(fetchQuestion());
   }
 
-  displayProgress() {
-    console.log(this.props.score);
-  }
-
   render() {
-    let a;
+    let answerBox;
     if (this.state.message) {
-      a = (
+      answerBox = (
         <p>{this.state.message}</p>
       );
     } else {
-      a = (
+      answerBox = (
         <form onSubmit={e => this.onSubmit(e)}>
           <input type="text" ref={input => this.userAnswer = input} />
           <button type="submit">Submit</button>
@@ -69,12 +65,14 @@ class Game extends React.Component {
       )
     }
     return (
-      <main className="learn">
+      <section className="col-12 learn">
         <Question />
-        {a}
-        <button className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
-        <Link to="/progress"><button>Progress</button></Link>
-      </main>
+        <div className="answerbox">{answerBox}</div>
+        <div className="options">
+          <button className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
+          <Link to="/progress"><button className="user-stats">User Stats</button></Link>
+        </div>
+      </section>
     );
 
   }

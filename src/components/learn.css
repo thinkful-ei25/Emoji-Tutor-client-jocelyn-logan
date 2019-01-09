@@ -1,6 +1,14 @@
-.learn {
+.answerbox{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.options button{
+  display: flex;
+  margin-left:auto;
+  margin-right:auto;
+}
+.learn a{
+  text-decoration: none;
 }
