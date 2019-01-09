@@ -1,26 +1,41 @@
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
 
-export const FETCH_QUESTIONS_SUCCESS = 'FETCH_QUESTIONS_SUCCESS';
-export const fetchQuestionsSuccess = questions => ({
-  type: FETCH_QUESTIONS_SUCCESS,
-  data: questions
+export const FETCH_QUESTION_REQUEST = 'FETCH_QUESTION_REQUEST';
+export const fetchQuestionRequest = () => ({
+  type: FETCH_QUESTION_REQUEST
 });
 
-export const FETCH_QUESTIONS__ERROR = 'FETCH_QUESTIONS__ERROR';
-export const fetchQuestionsError = error => ({
-  type: FETCH_QUESTIONS__ERROR,
+export const FETCH_QUESTION_SUCCESS = 'FETCH_QUESTION_SUCCESS';
+export const fetchQuestionSuccess = (question) => ({
+  type: FETCH_QUESTION_SUCCESS,
+  question
+});
+
+export const FETCH_QUESTION_ERROR = 'FETCH_QUESTION_ERROR';
+export const fetchQuestionError = (error) => ({
+  type: FETCH_QUESTION_ERROR,
   error
 });
 
-export const fetchQuestions = () => (dispatch) => {
-  return fetch(`${API_BASE_URL}/emojis`, {
+export const fetchQuestion = () => (dispatch, getState) => {
+  dispatch(fetchQuestionRequest());
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/users/questions`, {
     method: 'GET',
+    header: {
+      Authorization: `Bearer ${authToken}`
+    }
   })
     .then(res => normalizeResponseErrors(res))
-    .then(res => res.json())
-    .then((data) => console.log(data))
-    .catch(err => {
-      dispatch(fetchQuestionsError(err));
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    }).then(question => {
+      dispatch(fetchQuestionSuccess(question));
+    }).catch(err => {
+      dispatch(fetchQuestionError(err));
     });
 };

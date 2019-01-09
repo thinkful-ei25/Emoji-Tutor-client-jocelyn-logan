@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import { Link } from 'react-router-dom';
+import Learn from './learn';
 // import { fetchProtectedData } from '../actions/protected-data';
 
 export class Dashboard extends React.Component {
@@ -15,17 +15,14 @@ export class Dashboard extends React.Component {
             <section className="dashboard">
                 <div className="dashboard">
                     <div className="col-12">
-                        <p>{`HELLO! Welcome ${username}`}</p>
+                        <p>{`HELLO ${username}!!`}</p>
                     </div>
                     <section className="user-stats">
                         <p> Your stats: </p>
                     </section>
                 </div>
                 <div>
-                    <p>Click here to start learning:</p>
-                    <Link to="/qaarea">
-                        <button type='button'>Learn!</button>
-                    </Link>
+                    <Learn />
                 </div>
             </section>
         );
