@@ -21,25 +21,25 @@ class Game extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     const userAnswer = this.userAnswer.value.trim().toLowerCase();
-    this.setState({
-      userAnswer
-    });
 
-    let message;
     if (userAnswer === this.props.answer) {
-      let correct;
-      message = 'Correct!'
+      let userScore = this.state.score + 1;
       this.setState({
-        message,
-        score: correct + 1
-      });
+        userAnswer,
+        message: `Correct! Score:${userScore}`,
+        score: userScore
+      },
+        () => console.log(userScore)
+      );
     } else {
-      let correct;
-      message = `Incorrect! your answer: "${userAnswer}" Correct answer is: "${this.props.answer}"`;
+      let userScore = this.state.score - 1;
       this.setState({
-        message,
-        score: correct - 1
-      });
+        userAnswer,
+        message: `Your answer: ${userAnswer}. correct is "${this.props.answer}"`,
+        score: userScore
+      },
+        () => console.log(userScore)
+      );
     }
   }
 
@@ -72,7 +72,7 @@ class Game extends React.Component {
       <main className="learn">
         <Question />
         {a}
-        <button className="next-button" onClick={() => this.displayNextQuestion()}>Next Question</button>
+        <button className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
         <Link to="/progress"><button>Progress</button></Link>
       </main>
     );
