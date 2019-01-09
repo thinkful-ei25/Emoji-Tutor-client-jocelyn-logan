@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchQuestion } from '../actions/questions';
+import { fetchQuestion, postAnswer } from '../actions/questions';
 import Question from './question';
 import { Link } from 'react-router-dom';
 import './learn.css';
@@ -23,22 +23,22 @@ class Game extends React.Component {
     const userAnswer = this.userAnswer.value.trim().toLowerCase();
 
     if (userAnswer === this.props.answer) {
+      this.props.dispatch(postAnswer(true));
       let userScore = this.state.score + 1;
       this.setState({
         userAnswer,
         message: `Correct! Score:${userScore}`,
         score: userScore
-      },
-        () => console.log(userScore)
+      }
       );
     } else {
+      this.porops.dispatch(postAnswer(false));
       let userScore = this.state.score - 1;
       this.setState({
         userAnswer,
-        message: `Your answer: ${userAnswer}. correct is "${this.props.answer}"`,
+        message: `Your answer: ${userAnswer}. correct is "${this.props.answer}" Score:${userScore}`,
         score: userScore
-      },
-        () => console.log(userScore)
+      }
       );
     }
   }
