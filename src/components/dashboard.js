@@ -21,9 +21,9 @@ export class Dashboard extends React.Component {
                         <p> Your stats: </p>
                     </section>
                 </div>
-                <div>
-                    <Learn />
-                </div>
+
+                <Learn />
+
             </section>
         );
     }
