@@ -19,7 +19,7 @@ export class Question extends React.Component {
 }
 
 const mapStateToProps = state => {
-  if (state.question.question) {
+  if (state.question.question.emoji) {
     return {
       emoji: state.question.question.emoji.emojiCode
     }
