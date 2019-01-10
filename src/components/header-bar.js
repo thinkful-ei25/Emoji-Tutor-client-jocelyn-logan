@@ -32,12 +32,21 @@ export class HeaderBar extends React.Component {
                 <button onClick={() => this.logOut()}>Log out</button>
             );
         }
+        let showLogout = (
+            <div className="logout-button">{logOutButton}</div>
+        );
+        if (this.state.logoutMessage) {
+            showLogout = (
+                <p>{this.state.logoutMessage}</p>
+            )
+        }
         return (
             <header>
                 <div className="col-12 header-bar">
                     <h1>Emoji Tutor</h1>
-                    <div className="logout-button">{logOutButton}</div>
+                    {showLogout}
                 </div>
+
             </header>
         );
     }
