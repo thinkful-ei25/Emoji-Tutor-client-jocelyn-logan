@@ -81,9 +81,8 @@ export const fetchProgressRequest = () => ({
 });
 
 export const FETCH_PROGRESS_SUCCESS = 'FETCH_PROGRESS_SUCCESS';
-export const fetchProgressSuccess = (progress) => ({
-  type: FETCH_PROGRESS_SUCCESS,
-  progress
+export const fetchProgressSuccess = () => ({
+  type: FETCH_PROGRESS_SUCCESS
 });
 
 export const FETCH_PROGRESS_ERROR = 'FETCH_PROGRESS_ERROR';
