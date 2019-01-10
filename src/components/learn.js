@@ -41,7 +41,12 @@ class Game extends React.Component {
       );
     } else {
       this.props.dispatch(postAnswer(false));
-      let userScore = this.state.score - 1;
+      let userScore;
+      if (this.props.score > 1) {
+        userScore = this.state.score - 1;
+      } else {
+        userScore = 0;
+      }
       let userIncorrect = this.state.incorrect + 1;
       const data = {
         correct: this.props.correct,
@@ -106,7 +111,7 @@ const mapStateToProps = state => {
     answer,
     correct: state.question.correct,
     incorrect: state.question.incorrect,
-    socre: state.question.score
+    score: state.question.score
   };
 }
 

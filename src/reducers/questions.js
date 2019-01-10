@@ -13,7 +13,7 @@ const initialState = {
   correct: 0,
   incorrect: 0,
   showProgress: false
-}
+};
 
 export default function questionReducer(state = initialState, action) {
   switch (action.type) {

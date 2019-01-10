@@ -6,7 +6,7 @@ import requiresLogin from './requires-login';
 export class Progress extends React.Component {
   render() {
     let percentageCorrect;
-    if (this.props.correct && this.props.incorrect) {
+    if (this.props.correct || this.props.incorrect) {
       percentageCorrect = 100 * (this.props.correct / (this.props.correct + this.props.incorrect)).toFixed(2);
     }
     return (
@@ -28,7 +28,7 @@ export class Progress extends React.Component {
 
 const mapStateToProps = state => ({
   correct: state.question.correct,
-  incorrect: state.question.correct
+  incorrect: state.question.incorrect
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Progress)); 

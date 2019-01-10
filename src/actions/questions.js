@@ -34,7 +34,7 @@ export const fetchQuestion = () => (dispatch, getState) => {
       }
       return res.json();
     }).then(question => {
-      console.log(question);
+      // console.log(question);
       dispatch(fetchQuestionSuccess(question));
     }).catch(err => {
       dispatch(fetchQuestionError(err));
@@ -95,7 +95,7 @@ export const fetchProgressError = (error) => ({
 export const fetchProgress = () => (dispatch, getState) => {
   dispatch(fetchProgressRequest());
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/progress`, {
+  return fetch(`${API_BASE_URL}/userStats`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`
@@ -106,6 +106,7 @@ export const fetchProgress = () => (dispatch, getState) => {
     }
     return res.json();
   }).then(progress => {
+    console.log(progress);
     dispatch(fetchProgressSuccess(progress));
   }).catch(err => {
     dispatch(fetchProgressError(err));
@@ -133,7 +134,7 @@ export const postProgress = (progress) => (dispatch, getState) => {
   dispatch(postProgressRequest());
   const authToken = getState().auth.authToken;
   const data = progress;
-  return fetch(`${API_BASE_URL}/progress`, {
+  return fetch(`${API_BASE_URL}/userStats`, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json; charset=utf-8",
