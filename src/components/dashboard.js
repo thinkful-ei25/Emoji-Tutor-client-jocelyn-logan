@@ -17,9 +17,6 @@ export class Dashboard extends React.Component {
                     <div className="col-12">
                         <p>{`HELLO ${username}!!`}</p>
                     </div>
-                    <section className="user-stats">
-                        <p> Your stats: </p>
-                    </section>
                 </div>
 
                 <Learn />

@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
-import './header-bar.css'
+import { resetGame } from '../actions/questions';
+import './header-bar.css';
 
 export class HeaderBar extends React.Component {
     constructor(props) {
@@ -20,6 +21,7 @@ export class HeaderBar extends React.Component {
                 logoutMessage: ''
             });
             this.props.dispatch(clearAuth());
+            this.props.dispatch(resetGame);
             clearAuthToken();
         }, 1500);
     }

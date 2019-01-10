@@ -40,6 +40,8 @@ export default function questionReducer(state = initialState, action) {
       return { ...state, score: action.progress.score, correct: action.progress.correct, incorrect: action.progress.incorrect, error: null, loading: false };
     case actions.POST_PROGRESS_ERROR:
       return { ...state, loading: false, error: action.error };
+    case actions.RESET_GAME:
+      return { ...initialState };
     default:
       return state;
   }
