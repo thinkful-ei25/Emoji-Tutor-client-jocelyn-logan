@@ -11,7 +11,8 @@ const initialState = {
   loading: false,
   score: 0,
   correct: 0,
-  incorrect: 0
+  incorrect: 0,
+  showProgress: false
 }
 
 export default function questionReducer(state = initialState, action) {
@@ -40,8 +41,11 @@ export default function questionReducer(state = initialState, action) {
       return { ...state, score: action.progress.score, correct: action.progress.correct, incorrect: action.progress.incorrect, error: null, loading: false };
     case actions.POST_PROGRESS_ERROR:
       return { ...state, loading: false, error: action.error };
-    case actions.RESET_GAME:
+    case actions.RESET_STATE:
       return { ...initialState };
+    case actions.SHOW_PROGRESS:
+      const show = state.showProgress;
+      return { ...state, showProgress: !show };
     default:
       return state;
   }

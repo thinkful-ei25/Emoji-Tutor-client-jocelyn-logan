@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
-import { resetGame } from '../actions/questions';
+import { resetState } from '../actions/questions';
 import './header-bar.css';
 
 export class HeaderBar extends React.Component {
@@ -12,6 +12,12 @@ export class HeaderBar extends React.Component {
             logoutMessage: ''
         };
     }
+    componentDidUpdate() {
+        if (this.props.showProgress && !this.state.logoutMsg) {
+            document.getElementById('progress').scrollIntoView();
+        }
+    }
+
     logOut() {
         this.setState({
             logoutMessage: 'You are now logging out'
@@ -21,13 +27,12 @@ export class HeaderBar extends React.Component {
                 logoutMessage: ''
             });
             this.props.dispatch(clearAuth());
-            this.props.dispatch(resetGame);
+            this.props.dispatch(resetState);
             clearAuthToken();
         }, 1500);
     }
 
     render() {
-        // Only render the log out button if we are logged in
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (

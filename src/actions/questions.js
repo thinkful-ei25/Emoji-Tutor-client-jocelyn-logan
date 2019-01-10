@@ -147,7 +147,12 @@ export const postProgress = (progress) => (dispatch, getState) => {
   });
 };
 
-export const RESET_GAME = 'RESET_GAME';
-export const resetGame = () => ({
-  type: RESET_GAME
+export const RESET_STATE = 'RESET_STATE';
+export const resetState = () => ({
+  type: RESET_STATE
+});
+
+export const SHOW_PROGRESS = 'SHOW_PROGRESS';
+export const showProgress = () => ({
+  type: SHOW_PROGRESS
 });
