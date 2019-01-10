@@ -5,9 +5,23 @@ import { clearAuthToken } from '../local-storage';
 import './header-bar.css'
 
 export class HeaderBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            logoutMessage: ''
+        };
+    }
     logOut() {
-        this.props.dispatch(clearAuth());
-        clearAuthToken();
+        this.setState({
+            logoutMessage: 'You are now logging out'
+        });
+        setTimeout(() => {
+            this.setState({
+                logoutMessage: ''
+            });
+            this.props.dispatch(clearAuth());
+            clearAuthToken();
+        }, 1500);
     }
 
     render() {
