@@ -86,7 +86,7 @@ class Game extends React.Component {
     } else {
       answerBox = (
         <form onSubmit={e => this.onSubmit(e)}>
-          <input type="text" ref={input => this.userAnswer = input} />
+          <input className="text-box" type="text" placeholder="Type your answer here" ref={input => this.userAnswer = input} />
           <button className="submit-button" type="submit">Submit</button>
         </form>
       )
