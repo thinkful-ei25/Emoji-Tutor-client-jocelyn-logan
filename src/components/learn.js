@@ -56,7 +56,8 @@ class Game extends React.Component {
       this.props.dispatch(postProgress(data));
       this.setState({
         userAnswer,
-        message: `Your answer: ${userAnswer}. correct is "${this.props.answer}"`,
+        message: `Incorrect, your answer: ${userAnswer}. 
+        Correct answer is "${this.props.answer}"`,
       }
       );
     }
@@ -77,7 +78,10 @@ class Game extends React.Component {
     let answerBox;
     if (this.state.message) {
       answerBox = (
-        <p>{this.state.message}</p>
+        <div>
+          <p>{this.state.message}</p>
+          <button className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
+        </div>
       );
     } else {
       answerBox = (
@@ -92,7 +96,7 @@ class Game extends React.Component {
         <Question />
         <div className="answerbox">{answerBox}</div>
         <div className="options">
-          <button className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
+
           <Link to="/progress"><button className="user-stats" onClick={() => this.showProgress()}>User Stats</button></Link>
         </div>
       </section>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import requiresLogin from './requires-login';
 import { fetchProgress } from '../actions/questions';
+import HeaderBar from './header-bar';
 export class Progress extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchProgress());
@@ -15,6 +16,7 @@ export class Progress extends React.Component {
     }
     return (
       <section className="col-12 user-stats">
+        <HeaderBar />
         <h2>User Stats: </h2>
         <h3>Percentage correct: {percentageCorrect}% </h3>
         <p>Total correct: {this.props.correct}</p>
