@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import requiresLogin from './requires-login';
 import { fetchProgress } from '../actions/questions';
 import HeaderBar from './header-bar';
+import './progress.css'
 export class Progress extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchProgress());
   }
   render() {
     let percentageCorrect;
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.correct || this.props.incorrect) {
       percentageCorrect = 100 * (this.props.correct / (this.props.correct + this.props.incorrect)).toFixed(2);
     }

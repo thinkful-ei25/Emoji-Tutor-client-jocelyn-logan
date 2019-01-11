@@ -106,7 +106,7 @@ export const fetchProgress = () => (dispatch, getState) => {
     }
     return res.json();
   }).then(progress => {
-    console.log(progress);
+    // console.log(progress);
     dispatch(fetchProgressSuccess(progress));
   }).catch(err => {
     dispatch(fetchProgressError(err));
@@ -133,7 +133,7 @@ export const postProgressError = (error) => ({
 export const postProgress = (progress) => (dispatch, getState) => {
   dispatch(postProgressRequest());
   const authToken = getState().auth.authToken;
-  console.log('progress', progress);
+  // console.log('progress', progress);
   const data = progress;
   return fetch(`${API_BASE_URL}/userStats`, {
     method: 'POST',

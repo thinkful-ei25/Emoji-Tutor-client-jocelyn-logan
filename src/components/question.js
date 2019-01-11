@@ -9,7 +9,7 @@ export class Question extends React.Component {
       emoji = this.props.emoji;
 
     }
-    console.log(this.props.emoji);
+    // console.log(this.props.emoji);
     return (
       <section className="question">
         <p>{emoji}</p>
