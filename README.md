@@ -9,12 +9,12 @@ username: demo
 password: test123456
 
 ## Tech Stack
--Front End - ReactJs, Redux
--Server Side - NodeJs, Express, Passport & bcrypt, JWT Auth, Mongoose 
--Data Persistence - MongoDB
--Hosting - Heroku, mLab
--Dev Environment -  Git 💖
--Server: https://github.com/thinkful-ei25/Emoji-Tutor-server-jocelyn-logan
+- Front End - ReactJs, Redux
+- Server Side - NodeJs, Express, Passport & bcrypt, JWT Auth, Mongoose 
+- Data Persistence - MongoDB
+- Hosting - Heroku, mLab
+- Dev Environment -  Git 💖
+- Server: https://github.com/thinkful-ei25/Emoji-Tutor-server-jocelyn-logan
 ## Next steps
 - Adding stats per emoji
 - Add a tab with all emojis and their meanings for reference. 
