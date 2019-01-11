@@ -81,8 +81,9 @@ export const fetchProgressRequest = () => ({
 });
 
 export const FETCH_PROGRESS_SUCCESS = 'FETCH_PROGRESS_SUCCESS';
-export const fetchProgressSuccess = () => ({
-  type: FETCH_PROGRESS_SUCCESS
+export const fetchProgressSuccess = (progress) => ({
+  type: FETCH_PROGRESS_SUCCESS,
+  progress
 });
 
 export const FETCH_PROGRESS_ERROR = 'FETCH_PROGRESS_ERROR';
@@ -132,6 +133,7 @@ export const postProgressError = (error) => ({
 export const postProgress = (progress) => (dispatch, getState) => {
   dispatch(postProgressRequest());
   const authToken = getState().auth.authToken;
+  console.log('progress', progress);
   const data = progress;
   return fetch(`${API_BASE_URL}/userStats`, {
     method: 'POST',
@@ -146,13 +148,3 @@ export const postProgress = (progress) => (dispatch, getState) => {
     dispatch(postProgressError(err));
   });
 };
-
-export const RESET_STATE = 'RESET_STATE';
-export const resetState = () => ({
-  type: RESET_STATE
-});
-
-export const SHOW_PROGRESS = 'SHOW_PROGRESS';
-export const showProgress = () => ({
-  type: SHOW_PROGRESS
-});
