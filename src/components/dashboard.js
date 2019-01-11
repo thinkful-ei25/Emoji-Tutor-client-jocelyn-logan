@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import Learn from './learn';
 import HeaderBar from './header-bar';
-
+import './dashboard.css';
 
 // import { fetchProtectedData } from '../actions/protected-data';
 
@@ -22,6 +22,9 @@ export class Dashboard extends React.Component {
                     <div className="col-12">
                         <p>{`HELLO ${username}!!`}</p>
                         <p>{`Your score is currently: ${userScore}`}</p>
+                        <div className="emoji-link">
+                            <a href="https://unicode.org/emoji/charts/emoji-list.html">List of emojis for reference!</a>
+                        </div>
                     </div>
                 </div>
                 <Learn />
