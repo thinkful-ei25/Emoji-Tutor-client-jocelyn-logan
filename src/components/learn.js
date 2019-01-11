@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchQuestion, postAnswer } from '../actions/questions';
+import { fetchQuestion, postAnswer, fetchProgress, postProgress } from '../actions/questions';
 import Question from './question';
 import { Link } from 'react-router-dom';
+
 import './learn.css';
 class Game extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Game extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(fetchQuestion());
+    this.props.dispatch(fetchProgress());
   }
 
   onSubmit(e) {
@@ -24,20 +26,38 @@ class Game extends React.Component {
 
     if (userAnswer === this.props.answer) {
       this.props.dispatch(postAnswer(true));
-      let userScore = this.state.score + 1;
+      let userScore = this.props.score + 1;
+      let userCorrect = this.props.correct + 1;
+      const data = {
+        correct: userCorrect,
+        incorrect: this.props.incorrect,
+        score: userScore
+      };
+      this.props.dispatch(postProgress(data));
       this.setState({
         userAnswer,
-        message: `Correct! Score:${userScore}`,
-        score: userScore
+        message: `Correct!`,
       }
       );
     } else {
       this.props.dispatch(postAnswer(false));
-      let userScore = this.state.score - 1;
+      let userScore;
+      if (this.props.score > 1) {
+        userScore = this.props.score - 1;
+      } else {
+        userScore = 0;
+      }
+      let userIncorrect = this.props.incorrect + 1;
+      const data = {
+        correct: this.props.correct,
+        incorrect: userIncorrect,
+        score: userScore
+      };
+      this.props.dispatch(postProgress(data));
       this.setState({
         userAnswer,
-        message: `Your answer: ${userAnswer}. correct is "${this.props.answer}" Score:${userScore}`,
-        score: userScore
+        message: `Incorrect, your answer: ${userAnswer}. 
+        Correct answer is "${this.props.answer}"`,
       }
       );
     }
@@ -50,11 +70,18 @@ class Game extends React.Component {
     this.props.dispatch(fetchQuestion());
   }
 
+  showProgress() {
+    this.props.dispatch(fetchProgress());
+  }
+
   render() {
     let answerBox;
     if (this.state.message) {
       answerBox = (
-        <p>{this.state.message}</p>
+        <div>
+          <p>{this.state.message}</p>
+          <button className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
+        </div>
       );
     } else {
       answerBox = (
@@ -69,8 +96,8 @@ class Game extends React.Component {
         <Question />
         <div className="answerbox">{answerBox}</div>
         <div className="options">
-          <button type="button" className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
-          <Link to="/progress"><button type="button" className="user-stats">User Stats</button></Link>
+
+          <Link to="/progress"><button className="user-stats" onClick={() => this.showProgress()}>User Stats</button></Link>
         </div>
       </section>
     );
@@ -79,13 +106,17 @@ class Game extends React.Component {
 }
 
 const mapStateToProps = state => {
-  if (state.question.question) {
-    return {
-      answer: state.question.question.emoji.emojiName
-    }
-  } else {
-    return {};
+  let answer;
+  if (state.question.question.emoji) {
+    answer = state.question.question.emoji.emojiName
+
   }
+  return {
+    answer,
+    correct: state.question.correct,
+    incorrect: state.question.incorrect,
+    score: state.question.score
+  };
 }
 
 export default connect(mapStateToProps)(Game);

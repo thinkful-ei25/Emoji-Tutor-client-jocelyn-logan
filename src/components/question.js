@@ -9,7 +9,7 @@ export class Question extends React.Component {
       emoji = this.props.emoji;
 
     }
-    console.log(this.props.emoji);
+    // console.log(this.props.emoji);
     return (
       <section className="question">
         <span role="img" aria-label={emoji.emojiName} tabindex="0"><p>{emoji}</p></span>
@@ -19,7 +19,7 @@ export class Question extends React.Component {
 }
 
 const mapStateToProps = state => {
-  if (state.question.question) {
+  if (state.question.question.emoji) {
     return {
       emoji: state.question.question.emoji.emojiCode
     }
