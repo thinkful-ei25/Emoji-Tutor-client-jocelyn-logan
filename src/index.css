@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   background-color: #A991D8;
   color: #F9ED9D;
 }
@@ -14,11 +14,50 @@ h2, h3, p{
     text-align:center;
   }
   
-  button{
+button{
     display: flex;
     margin-left:auto;
     margin-right:auto;
-  }
+    margin-top: 10px;
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9ed9d), color-stop(1, #e3ae5f));
+	background:-moz-linear-gradient(top, #f9ed9d 5%, #e3ae5f 100%);
+	background:-webkit-linear-gradient(top, #f9ed9d 5%, #e3ae5f 100%);
+	background:-o-linear-gradient(top, #f9ed9d 5%, #e3ae5f 100%);
+	background:-ms-linear-gradient(top, #f9ed9d 5%, #e3ae5f 100%);
+	background:linear-gradient(to bottom, #f9ed9d 5%, #e3ae5f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9ed9d', endColorstr='#e3ae5f',GradientType=0);
+	background-color:#f9ed9d;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #eeb44f;
+	cursor:pointer;
+	color:#8d3a8d;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc9f52;
+}
+button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e3ae5f), color-stop(1, #f9ed9d));
+	background:-moz-linear-gradient(top, #e3ae5f 5%, #f9ed9d 100%);
+	background:-webkit-linear-gradient(top, #e3ae5f 5%, #f9ed9d 100%);
+	background:-o-linear-gradient(top, #e3ae5f 5%, #f9ed9d 100%);
+	background:-ms-linear-gradient(top, #e3ae5f 5%, #f9ed9d 100%);
+	background:linear-gradient(to bottom, #e3ae5f 5%, #f9ed9d 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3ae5f', endColorstr='#f9ed9d',GradientType=0);
+	background-color:#e3ae5f;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
 /* Grid measurements:
 *   960px wide including 12 gutters (half gutters on both edges)
 *

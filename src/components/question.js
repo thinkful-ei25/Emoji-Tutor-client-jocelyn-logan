@@ -12,7 +12,7 @@ export class Question extends React.Component {
     // console.log(this.props.emoji);
     return (
       <section className="question">
-        <span role="img" aria-label={emoji.emojiName} tabindex="0"><p>{emoji}</p></span>
+        <span role="img" aria-label={emoji} tabIndex="0"><p>{emoji}</p></span>
       </section>
     );
   }

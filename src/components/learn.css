@@ -4,11 +4,18 @@
   justify-content: center;
   align-items: center;
 }
-.options button{
-  display: flex;
-  margin-left:auto;
-  margin-right:auto;
-}
+
 .learn a{
   text-decoration: none;
+}
+
+.submit-button{
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.learn{
+  height: 100%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }

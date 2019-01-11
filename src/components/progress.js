@@ -18,10 +18,12 @@ export class Progress extends React.Component {
     return (
       <section className="col-12 user-stats">
         <HeaderBar />
-        <h2>User Stats: </h2>
-        <h3>Percentage correct: {percentageCorrect}% </h3>
-        <p>Total correct: {this.props.correct}</p>
-        <p>Total incorrect: {this.props.incorrect}</p>
+        <div className="user-stats-info">
+          <h2>User Stats: </h2>
+          <h3>Percentage correct: {percentageCorrect}% </h3>
+          <p>Total correct: {this.props.correct}</p>
+          <p>Total incorrect: {this.props.incorrect}</p>
+        </div>
         <Link to="/dashboard">
           <button className="back-button">
             Back

@@ -87,12 +87,12 @@ class Game extends React.Component {
       answerBox = (
         <form onSubmit={e => this.onSubmit(e)}>
           <input type="text" ref={input => this.userAnswer = input} />
-          <button type="submit">Submit</button>
+          <button className="submit-button" type="submit">Submit</button>
         </form>
       )
     }
     return (
-      <section className="col-12 learn">
+      <section className="learn">
         <Question />
         <div className="answerbox">{answerBox}</div>
         <div className="options">

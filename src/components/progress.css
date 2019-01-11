@@ -1,3 +1,7 @@
 .user-stats a{
   text-decoration: none;
 }
+
+.user-stats-info{
+  margin-top: 7rem;
+}
