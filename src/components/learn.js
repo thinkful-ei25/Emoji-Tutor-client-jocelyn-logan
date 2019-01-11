@@ -69,8 +69,8 @@ class Game extends React.Component {
         <Question />
         <div className="answerbox">{answerBox}</div>
         <div className="options">
-          <button className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
-          <Link to="/progress"><button className="user-stats">User Stats</button></Link>
+          <button type="button" className="next-button" onClick={() => this.displayNextQuestion()}>Next</button>
+          <Link to="/progress"><button type="button" className="user-stats">User Stats</button></Link>
         </div>
       </section>
     );
