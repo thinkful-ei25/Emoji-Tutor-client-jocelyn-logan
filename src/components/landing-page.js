@@ -20,9 +20,11 @@ export function LandingPage(props) {
                 <p>Learn Emojis! with the help of this app learn to communicate without words, because who has <span role="img" aria-label="clock">🕒</span> for words anyway</p>
             </div>
             <div className="col-12 loginregister">
-                <LoginForm />
+                <div className="login-form-border">
+                    <LoginForm />
+                </div>
             </div>
-            <div className="col-12 loginregister">
+            <div className="col-12 linkregister">
                 <p>No account yet? <Link to="/register">Register</Link></p>
             </div>
         </div>

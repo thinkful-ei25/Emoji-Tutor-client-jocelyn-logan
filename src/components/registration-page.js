@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import './registration-page.css';
 import RegistrationForm from './registration-form';
 
 export function RegistrationPage(props) {
@@ -13,7 +12,9 @@ export function RegistrationPage(props) {
             <div className="col-12">
                 <h2>Register for Emoji Tutor</h2>
                 <div className="col-12 loginregister">
-                    <RegistrationForm />
+                    <div className="login-form-border">
+                        <RegistrationForm />
+                    </div>
                 </div>
                 <p>Already registered? <Link to="/">Login</Link></p>
             </div>

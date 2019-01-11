@@ -13,11 +13,16 @@
   margin-top:10px;
   margin-bottom: 10px;
 }
-.learn{
+.learn-box{
   height: 100%;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  border: 5px solid;
+}
+
+.user-stats{
+  margin-bottom: 10px;
 }
 
 .text-box{

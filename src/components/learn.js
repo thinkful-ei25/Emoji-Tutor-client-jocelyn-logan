@@ -92,12 +92,14 @@ class Game extends React.Component {
       )
     }
     return (
-      <section className="learn">
-        <Question />
-        <div className="answerbox">{answerBox}</div>
-        <div className="options">
+      <section className="col-12 learn">
+        <div className="learn-box">
+          <Question />
+          <div className="answerbox">{answerBox}</div>
+          <div className="options">
 
-          <Link to="/progress"><button className="user-stats" onClick={() => this.showProgress()}>User Stats</button></Link>
+            <Link to="/progress"><button className="user-stats" onClick={() => this.showProgress()}>User Stats</button></Link>
+          </div>
         </div>
       </section>
     );
