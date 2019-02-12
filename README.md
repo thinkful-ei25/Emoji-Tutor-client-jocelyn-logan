@@ -9,14 +9,17 @@ username: demo
 password: test123456
 
 ## Preview
--learn
+- learn
+
 <img src="src/images/learnEmoji.JPG" width="450">
 
--get feedback
+- get feedback
+
 <img src="src/images/feedbackEmoji.JPG" width="450">
 
 
--see stats
+- see stats
+
 <img src="src/images/statsEmoji.JPG" width="450">
 
 
