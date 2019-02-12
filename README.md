@@ -8,6 +8,19 @@ Demo account:
 username: demo 
 password: test123456
 
+## Preview
+-learn
+<img src="images/learnEmoji.JPG" width="450">
+
+-get feedback
+<img src="images/feedbackEmoji.JPG" width="450">
+
+
+-see stats
+<img src="images/statsEmoji.JPG" width="450">
+
+
+
 ## Tech Stack
 - Front End - ReactJs, Redux
 - Server Side - NodeJs, Express, Passport & bcrypt, JWT Auth, Mongoose 
