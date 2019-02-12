@@ -10,14 +10,14 @@ password: test123456
 
 ## Preview
 -learn
-<img src="images/learnEmoji.JPG" width="450">
+<img src="src/images/learnEmoji.JPG" width="450">
 
 -get feedback
-<img src="images/feedbackEmoji.JPG" width="450">
+<img src="src/images/feedbackEmoji.JPG" width="450">
 
 
 -see stats
-<img src="images/statsEmoji.JPG" width="450">
+<img src="src/images/statsEmoji.JPG" width="450">
 
 
 
