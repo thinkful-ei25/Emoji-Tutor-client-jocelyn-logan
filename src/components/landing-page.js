@@ -17,7 +17,11 @@ export function LandingPage(props) {
                 <h2>Welcome to Emoji Tutor!!</h2>
             </div>
             <div className="col-12 information">
-                <p>Learn Emojis! with the help of this app learn to communicate without words, because who has <span role="img" aria-label="clock">🕒</span> for words anyway</p>
+                <p>Learn Emojis! with the help of this app learn to communicate without words, because who has <span role="img" aria-label="clock">🕒</span> for words anyway 
+                  <br></br>Demo account:
+          <br></br>Username: demo
+          <br></br>Password: test123456
+        </p>
             </div>
             <div className="col-12 loginregister">
                 <div className="login-form-border">
