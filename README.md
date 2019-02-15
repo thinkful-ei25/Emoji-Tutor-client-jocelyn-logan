@@ -1,4 +1,6 @@
 # Emoji Tutor
+### check out our API docs in this <a href="https://gist.github.com/jsantiag/ff8b1dcd69a184249bac4256e8ae86bd.js">public gist</a>
+
 Emoji tutor was born out of a need for emoji literacy. 
 - Learning application that uses spaced repetition algorithm to teach users emojis
 - Presents emoji and requires user to enter the emoji’s name
